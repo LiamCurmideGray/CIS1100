@@ -15,7 +15,8 @@ public class JavaAssignmentCIS1000 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int foo = 5;
+        System.out.println("This number is:" + foo);
     }
     
 }
