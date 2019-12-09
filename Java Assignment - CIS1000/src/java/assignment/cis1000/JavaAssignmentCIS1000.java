@@ -18,8 +18,8 @@ public class JavaAssignmentCIS1000 {
         int foo = 5;
         System.out.println("This number is:" + foo);
         
-        String word = "THis is word";
-        System.out.println("The word is " + word);
+        String sentence = "THis is word";
+        System.out.println("The word is " + sentence);
     }
     
 }
