@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.assignment.cis1000;
+
 
 /**
  *
  * @author liamc
  */
-public class JavaAssignmentCIS1000 {
+public class MainProgram {
 
     /**
      * @param args the command line arguments
