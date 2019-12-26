@@ -2,6 +2,7 @@ package linearstructure;
 
 import dataobjects.*;
 import linearnodes.*;
+import java.util.Scanner;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -89,10 +90,36 @@ public class CQueue {
 
             do
             {
-                temp.show();
+                if (temp.obj.getKey().equals(key))
+                {
+                    return temp.obj;
+                }
                 temp = temp.next;
             } while (temp != rear.next);
         }
-        return null;//This needs amendment
+        return null;
+    }
+    
+    //Part 4f
+    public void changePayOfAll(int percent)
+    {
+        AnyClass any;
+        
+        if (isFull || rear.next != front)
+        {
+            Node temp = front;
+            System.out.print("Enter the percentage for payment change: ");
+            Scanner s = new Scanner(System.in);
+            percent = s.nextInt();
+
+            do
+            {
+                any = serve();
+                Employee employee = (Employee) any;
+                employee.setPay((employee.getPay() * percent / 100) + employee.getPay());
+                put(any);
+                temp = temp.next;
+            } while (temp != rear.next);
+        }
     }
 }
