@@ -55,4 +55,9 @@ public class PartTimer extends Employee {
     public void setHours(int hours) {
         this.hours = hours;
     }
+    
+     public String getData(){
+        return "Sequence Number: " + seqNo +"\nSurname: " + surname + 
+                "\nPay: " + pay + "\nHours Worked: " + hours;
+    }
 }
