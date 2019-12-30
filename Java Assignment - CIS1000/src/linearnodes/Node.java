@@ -18,7 +18,7 @@ public class Node {
     public AnyClass obj;
     
     
-    public Node(Node next, AnyClass obj){
+    public Node(AnyClass obj){
         this.obj = obj;
         next = null;
     }

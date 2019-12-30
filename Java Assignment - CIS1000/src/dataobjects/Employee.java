@@ -54,8 +54,9 @@ public class Employee extends AnyClass {
     
     
    public String getData(){
-        return "Sequence Number" + seqNo;
-    }
+         return "Sequence Number: " + seqNo +"\nSurname: " + surname +
+                 "\nPay: " + pay;
+   }
     
     public String getKey(){
         return surname;
