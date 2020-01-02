@@ -63,8 +63,9 @@ public class Employee extends AnyClass {
    }
     
     public String getKey(){
-        return surname + seqNo;
+        return surname;
     }
+    
     
     public void edit(double pay) {
         this.pay = pay;
