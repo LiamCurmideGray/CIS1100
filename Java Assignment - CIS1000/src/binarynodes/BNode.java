@@ -28,8 +28,8 @@ public class BNode {
         System.out.println(obj.getData());
     }
     
-    public void editNode(){
-        obj.edit();
-    }
+//    public void editNode(){
+//        obj.edit();
+//    }
     
 }

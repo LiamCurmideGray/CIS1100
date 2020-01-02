@@ -38,6 +38,10 @@ public class Employee extends AnyClass {
     public int getSeqNo() {
         return seqNo;
     }
+    
+//    public String getSeqNo(){
+//        return String.valueOf(seqNo);
+//    }
 
     public void setSeqNo(int seqNo) {
         this.seqNo = seqNo;
@@ -59,7 +63,7 @@ public class Employee extends AnyClass {
    }
     
     public String getKey(){
-        return surname;
+        return surname + seqNo;
     }
     
     public void edit(double pay) {
