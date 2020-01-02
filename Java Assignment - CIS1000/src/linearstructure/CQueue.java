@@ -86,30 +86,27 @@ public class CQueue {
             Node temp = front;
 
             do {
+
                 if (temp.obj.getKey().equals(key)) {
+//                    System.out.println("Object Found!");
                     return temp.obj;
                 }
+
                 temp = temp.next;
             } while (temp != rear.next);
         }
+//        System.out.println("Object not found!");
         return null;
     }
 
     //Part 4f
     public void changePayOfAll(int percent) {
-        AnyClass any;
-
         if (isFull || rear.next != front) {
             Node temp = front;
-            System.out.print("Enter the percentage for payment change: ");
-            Scanner s = new Scanner(System.in);
-            percent = s.nextInt();
 
             do {
-                any = serve();
-                Employee employee = (Employee) any;
+                Employee employee = (Employee) temp.obj;
                 employee.setPay((employee.getPay() * percent / 100) + employee.getPay());
-                put(any);
                 temp = temp.next;
             } while (temp != rear.next);
         }

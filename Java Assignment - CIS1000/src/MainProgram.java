@@ -55,12 +55,15 @@ public class MainProgram {
                     newObject = new PartTimer(seqNo, surname, pay, hoursWorked);
                     break;
                 default:
+                    System.out.println("Invalid Choice");
                     newObject = null;
                     break;
             }
             System.out.println("");
-            if (circQ.put(newObject)) {
+            if (circQ.put(newObject) && newObject != null) {
                 System.out.println("New node has been added to the queue");
+            } else if (newObject == null) {
+
             } else {
                 System.out.println("Queue is full");
             }
@@ -71,6 +74,35 @@ public class MainProgram {
         System.out.println(">>>Traversal of Queue<<<");
         System.out.println("");
         circQ.listAll();
+
+        //NEED TO UNCOMMENT!!!!!!!!!!!!!!!!!!!!!
+        
+//        System.out.println("Searching for specific record");
+//        System.out.print("Enter Sequential Reference: ");
+//        String seqNo = s.next();
+//        System.out.print("Enter Surname: ");
+//        String surname = s.next();
+//
+//        String key = surname + seqNo;
+//
+//        AnyClass temp = circQ.editObject(key);
+//
+//        if (temp != null) {
+//            System.out.println("");
+//            System.out.println("Updating Payment");
+//            System.out.print("Insert New Amount: ");
+//            double newPay = s.nextDouble();
+//            temp.edit(newPay);
+//        }
+//        System.out.println("");
+//        System.out.println("New Updated Queue");
+//        circQ.listAll();
+
+        System.out.println("");
+        System.out.println("Updating all Employees Payment by 10%");
+        circQ.changePayOfAll(10);
+        circQ.listAll();
+
     }
 
 }

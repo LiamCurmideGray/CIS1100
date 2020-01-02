@@ -30,14 +30,14 @@ public class AnyClass {
     }
        
     public String getData(){
-        return "Sequence Numberrrr " + seqNo;
+        return "Sequence Number " + seqNo;
     }
     
     public String getKey(){
         return String.valueOf(seqNo);
     }
     
-    public void edit(){
+    public void edit(double pay){
         
     }
 }
