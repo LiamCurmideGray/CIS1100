@@ -13,9 +13,9 @@ import dataobjects.AnyClass;
  */
 public class BNode {
     
-    BNode left;
-    BNode right;
-    AnyClass obj;
+    public BNode left;
+    public BNode right;
+    public AnyClass obj;
     
     
     public BNode(AnyClass obj){
@@ -26,6 +26,7 @@ public class BNode {
     
     public void show(){
         System.out.println(obj.getData());
+        System.out.println("");
     }
     
 //    public void editNode(){

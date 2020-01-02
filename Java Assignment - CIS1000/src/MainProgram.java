@@ -11,6 +11,7 @@
 import linearstructure.*;
 import dataobjects.*;
 import java.util.Scanner;
+import non_linearstructures.BinSearchTree;
 
 public class MainProgram {
 
@@ -97,11 +98,33 @@ public class MainProgram {
 //        System.out.println("");
 //        System.out.println("New Updated Queue");
 //        circQ.listAll();
+//
+//        System.out.println("");
+//        System.out.println("Updating all Employees Payment by 10%");
+//        circQ.changePayOfAll(10);
+//        circQ.listAll();
 
         System.out.println("");
-        System.out.println("Updating all Employees Payment by 10%");
-        circQ.changePayOfAll(10);
-        circQ.listAll();
+        System.out.println("Populating BST by all CQueue");
+        BinSearchTree bst = new BinSearchTree();
+        
+        for(int i = 0; i < 3; i++) {
+            bst.populateFromQueue(circQ);
+        }
+        
+        
+        System.out.println("");
+        System.out.print("Search BST via Surname: ");
+        String surname = s.next();
+        
+        ////TO FIX
+        String sen = bst.search(surname).getData();
+        System.out.println(sen);
+        
+        System.out.println("");
+        System.out.println("Outputting all BST in Ascending Order");
+        bst.listInOrder();
+        
 
     }
 
