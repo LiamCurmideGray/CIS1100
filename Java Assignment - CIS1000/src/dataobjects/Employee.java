@@ -67,6 +67,8 @@ public class Employee extends AnyClass {
     }
     
     
+   
+    
     public void edit(double pay) {
         this.pay = pay;
     }
