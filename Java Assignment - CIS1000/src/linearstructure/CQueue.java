@@ -86,16 +86,18 @@ public class CQueue {
             Node temp = front;
 
             do {
+                Employee ff = (Employee) temp.obj;
+                String foo = ff.getKey() + ff.getSeqNo();
 
-                if (temp.obj.getKey().equals(key)) {
-//                    System.out.println("Object Found!");
+                if (foo.equals(key)) {
+                    System.out.println("Object Found!");
                     return temp.obj;
                 }
 
                 temp = temp.next;
             } while (temp != rear.next);
         }
-//        System.out.println("Object not found!");
+        System.out.println("Object not found!");
         return null;
     }
 
