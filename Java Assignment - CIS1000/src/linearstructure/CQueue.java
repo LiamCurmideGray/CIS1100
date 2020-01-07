@@ -20,8 +20,8 @@ public class CQueue {
     public boolean isFull;
 
     //Part 4a
-    public CQueue() {
-        for (int i = 0; i < 3; i++) {
+    public CQueue(int nodes) {
+        for (int i = 0; i < nodes; i++) {
             Node newNode = new Node(null);
 
             if (front == null) {
