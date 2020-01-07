@@ -20,17 +20,32 @@ public class MainProgram {
      */
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int choice;
+        int choice, node;
 
         System.out.println("CIS1000 Assignment by - Liam Curmi de Gray & Stefano Schembri");
         System.out.println("");
-        System.out.println("Construction of Empty CQueue & Binary Tree");
-        CQueue circQ = new CQueue();
+        System.out.println("Initilization of Empty CQueue & Binary Tree");
+        do {
+            System.out.println("How many nodes does the Circular Queue have?");
+            System.out.println("Note: Maximum of 20 nodes it can have");
+            System.out.print("Enter Node size: ");
+            node = s.nextInt();
+
+            if (node > 20) {
+                System.out.println("Node size exceeded limit, try again");
+            } else if (node < 0) {
+                System.out.println("Node size requires a positive Integer, try again");
+
+            }
+            System.out.println("");
+        } while (node > 20 || node < 0);
+        CQueue circQ = new CQueue(node);
         BinSearchTree bst = new BinSearchTree();
 
         do {
 
             System.out.println("");
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
             System.out.println("---> Main Menu <---");
             System.out.println("1) Populate Queue");
             System.out.println("2) List all objects in Circular Queue");
@@ -52,6 +67,12 @@ public class MainProgram {
                 case 1:
 
                     do {
+                        
+                        if(circQ.isFull == true) {
+                            System.out.println("Queue is full");
+                            break;
+                        }
+
                         System.out.println("Populating the Queue");
                         System.out.println("1) for Employee");
                         System.out.println("2) for PartTimer");
@@ -84,7 +105,7 @@ public class MainProgram {
                                     break;
 
                             }
-
+                        
                             System.out.println("");
                             if (circQ.put(newObject) && newObject != null) {
                                 System.out.println("New node has been added to the queue");
@@ -102,37 +123,51 @@ public class MainProgram {
                     break;
 
                 case 2:
-                    System.out.println("");
-                    System.out.println(">>>Traversal of Queue<<<");
-                    System.out.println("");
-                    circQ.listAll();
+                    if (circQ.front.obj != null) {
+                        System.out.println("");
+                        System.out.println(">>>Traversal of Queue<<<");
+                        System.out.println("");
+                        circQ.listAll();
+                    } else {
+                        System.out.println("Populate the Circular Queue first");
+                    }
+
                     break;
 
                 case 3:
-                    System.out.println("Searching for specific record");
-                    System.out.print("Enter Surname: ");
-                    String surname = s.next();
-                    System.out.print("Enter Sequential Reference: ");
-                    String seqNo = s.next();
-                    AnyClass temp = circQ.editObject(surname + seqNo);
+                    if (circQ.front.obj != null) {
+                        System.out.println("Searching for specific record");
+                        System.out.print("Enter Surname: ");
+                        String surname = s.next();
+                        System.out.print("Enter Sequential Reference: ");
+                        String seqNo = s.next();
+                        AnyClass temp = circQ.editObject(surname + seqNo);
 
-                    if (temp != null) {
+                        if (temp != null) {
+                            System.out.println("");
+                            System.out.println("Updating Payment");
+                            System.out.print("Insert New Amount: ");
+                            double newPay = s.nextDouble();
+                            temp.edit(newPay);
+                        }
                         System.out.println("");
-                        System.out.println("Updating Payment");
-                        System.out.print("Insert New Amount: ");
-                        double newPay = s.nextDouble();
-                        temp.edit(newPay);
+                        System.out.println("New Updated Queue");
+                        circQ.listAll();
+                    } else {
+                        System.out.println("Populate the Circular Queue first");
                     }
-                    System.out.println("");
-                    System.out.println("New Updated Queue");
-                    circQ.listAll();
                     break;
 
                 case 4:
+                    if (circQ.front.obj != null) {
                     System.out.println("");
                     System.out.println("Updating all Employees Payment by 10%");
                     circQ.changePayOfAll(10);
                     circQ.listAll();
+                    } else {
+                        System.out.println("Populate the Circular Queue first");
+                    }
+                    
                     break;
 
                 case 5:
@@ -143,7 +178,7 @@ public class MainProgram {
                         System.out.println("");
                         System.out.println("Populating BST by all CQueue");
 
-                        for (int i = 0; i < 3; i++) {
+                        for (int i = 0; i < node; i++) {
                             bst.populateFromQueue(circQ);
                         }
 
@@ -151,18 +186,30 @@ public class MainProgram {
                     break;
 
                 case 6:
-                    System.out.println("");
-                    System.out.print("Search BST via Surname: ");
-                    surname = s.next();
+                    if (bst.root != null) {
+                        System.out.println("");
+                        System.out.print("Search BST via Surname: ");
+                       String surname = s.next();
 
-                    String sen = bst.search(surname).getData();
-                    System.out.println(sen);
+                        if (bst.search(surname) != null) {
+                            String sen = bst.search(surname).getData();
+                            System.out.println(sen);
+                        } else {
+                            System.out.println("No Surname found matches in the BST");
+                        }
+                    } else {
+                        System.out.println("BST is empty, kindly populate it first");
+                    }
                     break;
 
                 case 7:
-                    System.out.println("");
-                    System.out.println("Outputting all BST in Ascending Order According to Sequential Number");
-                    bst.listInOrder();
+                    if (bst.root != null) {
+                        System.out.println("");
+                        System.out.println("Outputting all BST in Ascending Order According to Surname");
+                        bst.listInOrder();
+                    } else {
+                        System.out.println("BST is empty, kindly populate it first");
+                    }
                     break;
 
                 case 8:
