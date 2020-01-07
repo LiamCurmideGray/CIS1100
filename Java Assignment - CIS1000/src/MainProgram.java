@@ -33,10 +33,10 @@ public class MainProgram {
             System.out.println("");
             System.out.println("---> Main Menu <---");
             System.out.println("1) Populate Queue");
-            System.out.println("2) List all objects in Queue");
+            System.out.println("2) List all objects in Circular Queue");
             System.out.println("3) Update an Employee's payment");
-            System.out.println("4) Update all Employee's payment");
-            System.out.println("5) Populate BST by all Queue objects");
+            System.out.println("4) Update all Employee's payment by 10%");
+            System.out.println("5) Populate BST by all Circular Queue objects");
 
             if (bst.root != null) {
                 System.out.println("6) Search for object in BST");
@@ -161,12 +161,12 @@ public class MainProgram {
 
                 case 7:
                     System.out.println("");
-                    System.out.println("Outputting all BST in Ascending Order");
+                    System.out.println("Outputting all BST in Ascending Order According to Sequential Number");
                     bst.listInOrder();
                     break;
 
                 case 8:
-                    System.out.println("Exiting Program....");
+                    System.out.println("Exiting Program...");
                     break;
 
                 default:
