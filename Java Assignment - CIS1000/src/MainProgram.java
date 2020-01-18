@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author liamc
- */
 import linearstructure.*;
 import dataobjects.*;
 import java.util.Scanner;
@@ -15,9 +6,6 @@ import non_linearstructures.BinSearchTree;
 
 public class MainProgram {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int choice, node;
@@ -67,8 +55,8 @@ public class MainProgram {
                 case 1:
 
                     do {
-                        
-                        if(circQ.isFull == true) {
+
+                        if (circQ.isFull == true) {
                             System.out.println("Queue is full");
                             break;
                         }
@@ -105,7 +93,7 @@ public class MainProgram {
                                     break;
 
                             }
-                        
+
                             System.out.println("");
                             if (circQ.put(newObject) && newObject != null) {
                                 System.out.println("New node has been added to the queue");
@@ -160,14 +148,14 @@ public class MainProgram {
 
                 case 4:
                     if (circQ.front.obj != null) {
-                    System.out.println("");
-                    System.out.println("Updating all Employees Payment by 10%");
-                    circQ.changePayOfAll(10);
-                    circQ.listAll();
+                        System.out.println("");
+                        System.out.println("Updating all Employees Payment by 10%");
+                        circQ.changePayOfAll(10);
+                        circQ.listAll();
                     } else {
                         System.out.println("Populate the Circular Queue first");
                     }
-                    
+
                     break;
 
                 case 5:
@@ -189,7 +177,7 @@ public class MainProgram {
                     if (bst.root != null) {
                         System.out.println("");
                         System.out.print("Search BST via Surname: ");
-                       String surname = s.next();
+                        String surname = s.next();
 
                         if (bst.search(surname) != null) {
                             String sen = bst.search(surname).getData();
