@@ -89,6 +89,10 @@ public class BinSearchTree {
 
     //Part 4d
     public void populateFromQueue(CQueue que) {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         insert(que.serve());
     }
 }

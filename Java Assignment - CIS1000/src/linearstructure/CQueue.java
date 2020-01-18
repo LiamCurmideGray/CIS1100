@@ -2,6 +2,10 @@ package linearstructure;
 
 import dataobjects.*;
 import linearnodes.*;
+<<<<<<< Updated upstream
+=======
+import java.util.Scanner;
+>>>>>>> Stashed changes
 
 //Part 4
 public class CQueue {

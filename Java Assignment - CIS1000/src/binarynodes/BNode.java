@@ -19,5 +19,8 @@ public class BNode {
         System.out.println(obj.getData());
         System.out.println("");
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }

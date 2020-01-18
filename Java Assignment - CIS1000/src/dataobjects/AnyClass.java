@@ -1,6 +1,9 @@
 package dataobjects;
 
+<<<<<<< Updated upstream
 //Part 1
+=======
+>>>>>>> Stashed changes
 public class AnyClass {
 
     int seqNo;

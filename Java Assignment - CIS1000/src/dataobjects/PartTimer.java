@@ -1,6 +1,9 @@
 package dataobjects;
 
+<<<<<<< Updated upstream
 //Part 2
+=======
+>>>>>>> Stashed changes
 public class PartTimer extends Employee {
 
     int hours;
