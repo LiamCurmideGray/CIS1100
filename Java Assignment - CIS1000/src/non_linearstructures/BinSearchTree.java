@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package non_linearstructures;
 
-/**
- *
- * @author liamc
- */
 import dataobjects.*;
 import binarynodes.*;
 import linearstructure.*;
@@ -22,6 +13,7 @@ public class BinSearchTree {
         root = null;
     }
 
+    //Part 4a
     public void insertBST(BNode parent, BNode newNode) {
         if (parent == null) {
             root = newNode;
@@ -46,6 +38,7 @@ public class BinSearchTree {
 
     }
 
+    //Part 4a
     public void insert(AnyClass newObj) {
         BNode newNode = new BNode(newObj);
 
@@ -53,6 +46,7 @@ public class BinSearchTree {
 
     }
 
+    //Part 4b
     public BNode searchKey(BNode parent, String key) {
         if (parent != null) {
             if (parent.obj.getKey().equals(key)) {
@@ -68,6 +62,7 @@ public class BinSearchTree {
 
     }
 
+    //Part 4b
     public AnyClass search(String key) {
 
         BNode findNode = searchKey(root, key);
@@ -79,6 +74,7 @@ public class BinSearchTree {
         }
     }
 
+    //Part 4c
     public void listInOrder() {
         inorderTraversal(root);
     }
@@ -91,10 +87,8 @@ public class BinSearchTree {
         }
     }
 
+    //Part 4d
     public void populateFromQueue(CQueue que) {
-
-        
         insert(que.serve());
-
     }
 }

@@ -1,27 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dataobjects;
 
-/**
- *
- * @author liamc
- */
+//Part 2
 public class PartTimer extends Employee {
-    
+
     int hours;
-    
-    public PartTimer(){
-        
+
+    public PartTimer() {
+
     }
-    
-    public PartTimer(int seqNo, String surname, double pay, int hours){
-        
+
+    public PartTimer(int seqNo, String surname, double pay, int hours) {
+
         super(seqNo, surname, pay);
         this.hours = hours;
-        
+
     }
 
     public int getHours() {
@@ -55,9 +47,9 @@ public class PartTimer extends Employee {
     public void setHours(int hours) {
         this.hours = hours;
     }
-    
-     public String getData(){
-        return "Sequence Number: " + seqNo +"\nSurname: " + surname + 
-                "\nPay: " + pay + "\nHours Worked: " + hours;
+
+    public String getData() {
+        return "Sequence Number: " + seqNo + "\nSurname: " + surname
+                + "\nPay: " + pay + "\nHours Worked: " + hours;
     }
 }
