@@ -2,7 +2,10 @@ package binarynodes;
 
 import dataobjects.AnyClass;
 
+<<<<<<< Updated upstream
 //Part 3
+=======
+>>>>>>> Stashed changes
 public class BNode {
 
     public BNode left;
